@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SimpleTestParty {
+public class SimpleTest {
 
     private final Party party = new MyParty();
 
@@ -51,5 +51,24 @@ public class SimpleTestParty {
 
     }
 
+    @Test
+    public void testHelpersRandomTests2() {
+        int start = 879;
+        int stop = 898;
+
+        Interval carine = new Interval(226, 475);
+        Interval dina = new Interval(241, 647);
+        Interval erik = new Interval(387, 594);
+        Interval frank = new Interval(756, 874);
+        Interval george = new Interval(217, 312);
+        Interval hans = new Interval(93, 740);
+
+        List<Interval> helpers = Arrays.asList(carine, dina, erik, frank, george, hans);
+
+        Assert.assertFalse(
+                String.format("Helpers %s are enough for my party from %d until %d.", helpers, start, stop),
+                party.check(new ArrayList<>(helpers), start, stop));
+
+    }
 
 }

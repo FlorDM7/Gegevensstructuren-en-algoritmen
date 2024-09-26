@@ -8,7 +8,7 @@ import java.util.Arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SimpleTestPersoon {
+public class SimpleTest {
 
     private static final Random RG = new Random();
 

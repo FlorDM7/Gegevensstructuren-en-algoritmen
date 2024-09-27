@@ -151,4 +151,15 @@ public class SimpleTest {
 
         Assert.assertNotNull(antwTriplet);
     }
+
+    @Test
+    public void test12(){
+        List<Integer> invoer = Arrays.asList(
+                -10, 1, 2, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7
+        );
+
+        TripletIndices antwTriplet = dsp.zoekNulSomTriplet(Collections.unmodifiableList(invoer));
+
+        Assert.assertEquals(new TripletIndices(0,3,4), antwTriplet);
+    }
 }

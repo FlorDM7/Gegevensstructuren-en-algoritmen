@@ -48,13 +48,13 @@ public class MijnZoeker implements Zoeker {
     // 2 for-loops is te inefficient
     /*
     @Override
-    public Practicum1.BeroemdheidZoeken.Persoon zoekBeroemdheid(List<Practicum1.BeroemdheidZoeken.Persoon> groep) {
+    public Persoon zoekBeroemdheid(List<Persoon> groep) {
         int grootte = groep.size() - 1;
 
-        for (Practicum1.BeroemdheidZoeken.Persoon persoon1 : groep) {
+        for (Persoon persoon1 : groep) {
             int aantalDiePersoon1Kent = 0;
 
-            for (Practicum1.BeroemdheidZoeken.Persoon persoon2 : groep) {
+            for (Persoon persoon2 : groep) {
                 if (!persoon1.equals(persoon2)) {
                     if (persoon1.kent(persoon2)) {
                         break;

@@ -24,10 +24,18 @@ public class MijnDrieSomProbleem implements DrieSomProbleem {
                     }
                 }
             }
-            if (Math.abs(gesorteerdeInvoer.get(p)) >= gesorteerdeInvoer.get(q)) {
-                p++;
+            if (Math.abs(gesorteerdeInvoer.get(p)) >= Math.abs(gesorteerdeInvoer.get(q))) {
+                if (Math.abs(gesorteerdeInvoer.get(q))+Math.abs(gesorteerdeInvoer.get(q-1)) < Math.abs(gesorteerdeInvoer.get(p))) {
+                    p++;
+                } else {
+                    q--;
+                }
             } else {
-                q--;
+                if (Math.abs(gesorteerdeInvoer.get(p))+Math.abs(gesorteerdeInvoer.get(p+1)) < Math.abs(gesorteerdeInvoer.get(q))) {
+                    q--;
+                } else {
+                    p++;
+                }
             }
         }
 

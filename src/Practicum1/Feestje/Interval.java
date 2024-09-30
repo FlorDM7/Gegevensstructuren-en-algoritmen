@@ -2,7 +2,7 @@ package Practicum1.Feestje;
 
 public class Interval implements Comparable<Interval> {
 
-    /* Omdat Practicum1.Feestje.Interval Comparable<Practicum1.Feestje.Interval> implementeert, zal een interval
+    /* Omdat Interval Comparable<Interval> implementeert, zal een interval
      * vergelijkbaar zijn met andere intervallen. Dit geeft mogelijkheid tot
      * het gebruik van een hoop ingebouwde methoden in java. Lees meer in de
      * Java 9 API:

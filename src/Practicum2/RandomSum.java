@@ -1,5 +1,6 @@
 package Practicum2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -13,8 +14,28 @@ public class RandomSum {
     public static long sum(int start, int end, int iterations) {
         Random random = new Random(SEED);
 
-        Map<Integer, Integer> map = new HashMap<>();
+        ArrayList<Integer> array = new ArrayList<Integer>();
         
+        //Populate map
+        for (int i = start; i < end; i++) {
+            array.add(random.nextInt(MAX));
+        }
+
+        long sum = 0;
+        for (int i = 0; i < iterations; i++) {
+            sum += array.get(random.nextInt(end - start));
+        }
+
+        return sum;
+    }
+
+    /*
+    Original function
+    public static long sum(int start, int end, int iterations) {
+        Random random = new Random(SEED);
+
+        Map<Integer, Integer> map = new HashMap<>();
+
         //Populate map
         for (int i = start; i < end; i++) {
             map.put(i, random.nextInt(MAX));
@@ -28,6 +49,7 @@ public class RandomSum {
 
         return sum;
     }
+     */
 
     public static void main(String[] args) {
         int start = 97;

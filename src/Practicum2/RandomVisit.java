@@ -8,7 +8,7 @@ public class RandomVisit {
 
     private static final long SEED = 1234;
 
-    // 60ms andere voorstelling
+    // Tweede optimalisatie: andere voorstelling (60ms)
     public static int visitElements(int dimension1, int dimension2,
                                     int dimension3, int iterations,
                                     int internalIterations) {

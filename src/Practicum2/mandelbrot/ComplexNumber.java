@@ -30,11 +30,19 @@ public class ComplexNumber {
     return a;
   }
 
+  public void setReal(double real) {
+    this.a = real;
+  }
+
   /**
    * @return this ComplexNumber's imaginary part.
    */
   public double getImaginary() {
     return b;
+  }
+
+  public void setImaginary(double imaginary) {
+    this.b = imaginary;
   }
 
   /**
@@ -48,8 +56,11 @@ public class ComplexNumber {
    * @return a new ComplexNumber equal to the sum
    * of <code>this</code> and <code>z</code>.
    */
-  public ComplexNumber add(ComplexNumber z) {
-    return new ComplexNumber(a + z.a, b + z.b);
+  public void add(ComplexNumber z) {
+    // return new ComplexNumber(a + z.a, b + z.b);
+    // no new object is created
+    a += z.a;
+    b += z.b;
   }
 
   /**
@@ -64,9 +75,15 @@ public class ComplexNumber {
    * @return a new ComplexNumber equal to the product of
    * <code>this</code> and <code>z</code>.
    */
-  public ComplexNumber mult(ComplexNumber z) {
-    return new ComplexNumber(a * z.a - b * z.b,
-            a * z.b + b * z.a);
+  public void mult(ComplexNumber z) {
+    // return new ComplexNumber(a * z.a - b * z.b,
+    //        a * z.b + b * z.a);
+    // no new object is created
+    // calculate locally so you don't use the wrong values
+    double localA = a * z.a - b * z.b;
+    double localB = a * z.b + b * z.a;
+    a = localA;
+    b = localB;
   }
 
   /**

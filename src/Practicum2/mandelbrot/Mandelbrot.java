@@ -68,6 +68,44 @@ public class Mandelbrot {
 
         long start = System.currentTimeMillis();
 
+        // create objects outside the loops
+        c = new ComplexNumber(0.0,0.0);
+        z = new ComplexNumber(0.0,0.0);
+
+        // for every pixel in the array
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+
+                // edit the already exiting objects
+                c.setReal(xstart + i * gap);
+                c.setImaginary(ystart + j * gap);
+                z.setReal(0.0);
+                z.setImaginary(0.0);
+
+                int k = 0;
+
+                // compute a value
+                while (z.getMagnitude() < 2.0 && k < max_iterations) {
+                    // z <- z^2 + c
+                    z.mult(z); // no new object is created
+                    z.add(c);
+                    k++;
+                }
+                pixel[j * width + i] = k;
+            }
+        }
+
+        System.out.println("Tijd = "+(System.currentTimeMillis()-start));
+
+        return pixel;
+    }
+
+    /*
+    Original function
+    public int[] getPixels() {
+
+        long start = System.currentTimeMillis();
+
         // for every pixel in the array
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
@@ -91,4 +129,5 @@ public class Mandelbrot {
 
         return pixel;
     }
+     */
 }

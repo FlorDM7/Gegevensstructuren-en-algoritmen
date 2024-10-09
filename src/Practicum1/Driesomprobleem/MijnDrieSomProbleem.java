@@ -10,40 +10,33 @@ public class MijnDrieSomProbleem implements DrieSomProbleem {
     public TripletIndices zoekNulSomTriplet(List<Integer> gesorteerdeInvoer) {
         if (gesorteerdeInvoer.size() < 3) return null;
 
-        // dubbele pointer
-        int p = 0;
-        int q = gesorteerdeInvoer.size() - 1;
-
-        while (p < q) {
-            for (int i = 0; i < gesorteerdeInvoer.size(); i++) {
-                if (i != p && i != q) {
-                    if (sumIsZero(gesorteerdeInvoer.get(p),gesorteerdeInvoer.get(i), gesorteerdeInvoer.get(q))) {
-                        List<Integer> list = Arrays.asList(p,i,q);
-                        Collections.sort(list);
-                        return new TripletIndices(list.getFirst(),list.get(1),list.getLast());
-                    }
-                }
+        // neem 1 vaste i en ga ermee over de array
+        for (int i = 0; i < gesorteerdeInvoer.size(); i++) {
+            // indien het vorige getal dezelfde waarde had, skip de loop eenmalig
+            if (i > 0 && gesorteerdeInvoer.get(i).equals(gesorteerdeInvoer.get(i - 1))) {
+                continue;
             }
-            if (Math.abs(gesorteerdeInvoer.get(p)) >= Math.abs(gesorteerdeInvoer.get(q))) {
-                if (Math.abs(gesorteerdeInvoer.get(q))+Math.abs(gesorteerdeInvoer.get(q-1)) < Math.abs(gesorteerdeInvoer.get(p))) {
-                    p++;
-                } else {
-                    q--;
-                }
-            } else {
-                if (Math.abs(gesorteerdeInvoer.get(p))+Math.abs(gesorteerdeInvoer.get(p+1)) < Math.abs(gesorteerdeInvoer.get(q))) {
-                    q--;
-                } else {
-                    p++;
+
+            // dubbele pointer na de i en kijk of er een som is
+            int p = i + 1;
+            int q = gesorteerdeInvoer.size() - 1;
+
+            while (p < q) {
+                if (i != p && i != q) {
+                    if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) == 0) {
+                        List<Integer> list = Arrays.asList(p, i, q);
+                        Collections.sort(list);
+                        return new TripletIndices(list.getFirst(), list.get(1), list.getLast());
+                    } else if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) > 0) {
+                        q--;
+                    } else {
+                        p++;
+                    }
                 }
             }
         }
 
         return null;
-    }
-
-    public boolean sumIsZero(int i, int j, int k) {
-        return i + j + k == 0;
     }
 
 }

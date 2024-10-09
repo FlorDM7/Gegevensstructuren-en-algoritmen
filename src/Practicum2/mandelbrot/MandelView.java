@@ -47,7 +47,7 @@ public class MandelView extends Frame {
                 }
             }
 
-            // System.exit(0);
+            System.exit(0);
         }
 
         public Color getColor(int k) {

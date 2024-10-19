@@ -2,8 +2,8 @@ package Algorithms;
 
 /**
  * Java implementation for the sorting algorithms discussed in this course.
- * Using the pseudocode for the slides.
- * General note: Pseudocode start counting at index 1, in Java we start at 0
+ * Based on the pseudocode from the slides.
+ * General note: Pseudocode starts counting at index 1, in Java we start at 0.
  *
  * @author Flor De Meulemeester
  */
@@ -68,10 +68,10 @@ public class SortingAlgorithms {
         int[] L = new int[n1 + 1];
         int[] R = new int[n2 + 1];
         // make the two separate arrays with the original values
-        for (int i = 0; i <= n1; i++) {
+        for (int i = 0; i < n1; i++) {
             L[i] = A[start + i];
         }
-        for (int j = 0; j <= n2; j++) {
+        for (int j = 0; j < n2; j++) {
             R[j] = A[mid + 1 + j];
         }
         // Last element of the list is 'infinity'
@@ -79,12 +79,12 @@ public class SortingAlgorithms {
         R[n2] = Integer.MAX_VALUE;
         int i = 0;
         int j = 0;
-        // Here we actually merge back to
+        // Here we actually merge back into A
         // We use three pointers, one in each array
         // We start at the front, we check what is the smallest value in both of our sub-arrays,
         // then we put that value in A, we increment and look for the next smallest value
         // the result is a sorted array A
-        for (int k = start; k < end; k++) {
+        for (int k = start; k <= end; k++) {
             if (L[i] <= R[j]) {
                 A[k] = L[i];
                 i++;

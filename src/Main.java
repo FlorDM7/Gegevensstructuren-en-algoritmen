@@ -7,8 +7,6 @@ public class Main {
         System.out.println("Hello world!");
         // printPermuations(new int[] {1,2,3,4});
         // permuteWithoutIdentity(new int[] {1,2,3,4});
-        int[] A = new int[10];
-        System.out.println(Arrays.toString(A));
     }
 
     public static void permuteWithoutIdentity(int[] A) {

@@ -1,4 +1,4 @@
-package Practicum3.Meerderheidselement;
+package Practicum3;
 
 import java.util.Arrays;
 

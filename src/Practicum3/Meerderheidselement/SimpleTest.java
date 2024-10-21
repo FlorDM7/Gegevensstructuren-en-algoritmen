@@ -1,5 +1,6 @@
 package Practicum3.Meerderheidselement;
 
+import Practicum3.Sequence;
 import org.junit.Assert;
 import org.junit.Test;
 

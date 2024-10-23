@@ -17,21 +17,19 @@ public class MijnDrieSomProbleem implements DrieSomProbleem {
                 continue;
             }
 
-            // dubbele pointer na de i en kijk of er een som is
+            // dubbele pointer ACHTER de i en kijk of er een som is
             int p = i + 1;
             int q = gesorteerdeInvoer.size() - 1;
 
             while (p < q) {
-                if (i != p && i != q) {
-                    if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) == 0) {
-                        List<Integer> list = Arrays.asList(p, i, q);
-                        Collections.sort(list);
-                        return new TripletIndices(list.getFirst(), list.get(1), list.getLast());
-                    } else if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) > 0) {
-                        q--;
-                    } else {
-                        p++;
-                    }
+                if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) == 0) {
+                    List<Integer> list = Arrays.asList(p, i, q);
+                    Collections.sort(list);
+                    return new TripletIndices(list.getFirst(), list.get(1), list.getLast());
+                } else if (gesorteerdeInvoer.get(p) + gesorteerdeInvoer.get(i) + gesorteerdeInvoer.get(q) > 0) {
+                    q--;
+                } else {
+                    p++;
                 }
             }
         }

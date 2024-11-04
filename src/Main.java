@@ -4,9 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        // printPermuations(new int[] {1,2,3,4});
-        // permuteWithoutIdentity(new int[] {1,2,3,4});
+        System.out.println("Hello World!");
     }
 
     public static void permuteWithoutIdentity(int[] A) {

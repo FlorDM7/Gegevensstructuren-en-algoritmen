@@ -493,4 +493,164 @@ class SortingAlgorithmsTest {
         assertArrayEquals(expectedArray, inputArray);
     }
 
+    @Test
+    void testHeapSortCase1() {
+        int[] inputArray = {5, 12, 3, 19, 7, 1, 8};
+        int[] expectedArray = {1, 3, 5, 7, 8, 12, 19};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase2() {
+        int[] inputArray = {15, 6, 2, 9, 14, 13, 1};
+        int[] expectedArray = {1, 2, 6, 9, 13, 14, 15};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase3() {
+        int[] inputArray = {-5, -12, -3, -19, -7, -1, -8};
+        int[] expectedArray = {-19, -12, -8, -7, -5, -3, -1};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase4() {
+        int[] inputArray = {100, 99, 98, 97, 96, 95};
+        int[] expectedArray = {95, 96, 97, 98, 99, 100};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase5() {
+        int[] inputArray = {4, 8, 12, 16, 20, 24, 28};
+        int[] expectedArray = {4, 8, 12, 16, 20, 24, 28};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase6() {
+        int[] inputArray = {9, 4, 8, 7, 3, 6, 2, 5, 1};
+        int[] expectedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase7() {
+        int[] inputArray = {11, 22, 33, 44, 55, 66};
+        int[] expectedArray = {11, 22, 33, 44, 55, 66};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase8() {
+        int[] inputArray = {21, 15, 13, 19, 10, 7, 4};
+        int[] expectedArray = {4, 7, 10, 13, 15, 19, 21};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase9() {
+        int[] inputArray = {3, 3, 3, 3, 3, 3};
+        int[] expectedArray = {3, 3, 3, 3, 3, 3};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase10() {
+        int[] inputArray = {-10, -5, 0, 5, 10};
+        int[] expectedArray = {-10, -5, 0, 5, 10};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase11() {
+        int[] inputArray = {100, 200, 50, 75, 25, 150, 175, 0};
+        int[] expectedArray = {0, 25, 50, 75, 100, 150, 175, 200};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase12() {
+        int[] inputArray = {15, 1, 23, 8, 10, 16, 25, 5, 30};
+        int[] expectedArray = {1, 5, 8, 10, 15, 16, 23, 25, 30};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase13() {
+        int[] inputArray = {-9, 4, 0, -3, 8, 5, -6, 7};
+        int[] expectedArray = {-9, -6, -3, 0, 4, 5, 7, 8};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase14() {
+        int[] inputArray = {99, 3, 100, 98, 4, 97, 2};
+        int[] expectedArray = {2, 3, 4, 97, 98, 99, 100};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase15() {
+        int[] inputArray = {-2, -4, -1, -5, 0, -3};
+        int[] expectedArray = {-5, -4, -3, -2, -1, 0};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase16() {
+        int[] inputArray = {8, 0, 1, 8, 3, 8, 7, 4};
+        int[] expectedArray = {0, 1, 3, 4, 7, 8, 8, 8};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase17() {
+        int[] inputArray = {90, 10, 80, 20, 70, 30, 60, 40, 50};
+        int[] expectedArray = {10, 20, 30, 40, 50, 60, 70, 80, 90};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase18() {
+        int[] inputArray = {-15, 5, -10, 0, -5, 10};
+        int[] expectedArray = {-15, -10, -5, 0, 5, 10};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase19() {
+        int[] inputArray = {33, 22, 11, 44, 55, 66};
+        int[] expectedArray = {11, 22, 33, 44, 55, 66};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
+    @Test
+    void testHeapSortCase20() {
+        int[] inputArray = {9, 12, 0, -2, -9, 10, 11};
+        int[] expectedArray = {-9, -2, 0, 9, 10, 11, 12};
+        SortingAlgorithms.heapSort(inputArray);
+        assertArrayEquals(expectedArray, inputArray);
+    }
+
 }

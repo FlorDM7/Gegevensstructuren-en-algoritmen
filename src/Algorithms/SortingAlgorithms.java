@@ -37,18 +37,6 @@ public class SortingAlgorithms {
         mergeSortRecursive(A, 0, A.length-1);
     }
 
-    /*
-    TODO Bubblesort ??
-     */
-
-    /*
-    TODO Heapsort
-     */
-
-    /*
-    TODO Quicksort
-    */
-
     private static void mergeSortRecursive(int[] A, int start, int end){
         if (start < end) {
             int mid = (start + end) / 2;
@@ -93,6 +81,67 @@ public class SortingAlgorithms {
                 j++;
             }
         }
+    }
+
+    /**
+     * Heap sort
+     * Time complexity is O(n*log(n))
+     * Space complexity is O(1)
+     */
+    public static void heapSort(int[] A) {
+        buildMaxHeap(A);
+        int n = A.length - 1;
+        for (int i = A.length - 1; i > 1; i--) {
+            swap(A, 0,i);
+            n--;
+            maxHeapify(A, 0, n);
+        }
+    }
+
+    private static void buildMaxHeap(int[] A) {
+        int n = A.length - 1;
+        for (int i = n / 2; i >= 0; i--) {
+            maxHeapify(A, i, n);
+        }
+    }
+
+    private static void maxHeapify(int[] A, int i, int n) {
+        int l = leftChild(i);
+        int r = rightChild(i);
+        int largest;
+        if (l < n && A[l] > A[i]) {
+            largest = l;
+        } else {
+            largest = i;
+        }
+        if (r < n && A[r] > A[largest]) {
+            largest = r;
+        }
+        if (largest != i) {
+            swap(A, i, largest);
+            maxHeapify(A, largest, n);
+        }
+    }
+
+    private static int leftChild(int i) {
+        return 2 * i + 1;
+    }
+
+    private static int rightChild(int i) {
+        return 2 * i + 2;
+    }
+
+    private static void swap(int[] A, int i, int j) {
+        int temp = A[i];
+        A[i] = A[j];
+        A[j] = temp;
+    }
+
+    /**
+     * Quick sort
+     */
+    public static void quickSort(int[] A) {
+
     }
 
 }

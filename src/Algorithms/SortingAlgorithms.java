@@ -1,5 +1,9 @@
 package Algorithms;
 
+import Practicum4.QuickSort.MySorter;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Java implementation for the sorting algorithms discussed in this course.
  * Based on the pseudocode from the slides.
@@ -90,17 +94,15 @@ public class SortingAlgorithms {
      */
     public static void heapSort(int[] A) {
         buildMaxHeap(A);
-        int n = A.length - 1;
-        for (int i = A.length - 1; i > 1; i--) {
+        for (int i = A.length - 1; i > 0; i--) {
             swap(A, 0,i);
-            n--;
-            maxHeapify(A, 0, n);
+            maxHeapify(A, 0, i-1);
         }
     }
 
     private static void buildMaxHeap(int[] A) {
         int n = A.length - 1;
-        for (int i = n / 2; i >= 0; i--) {
+        for (int i = n/2 ; i >= 0; i--) {
             maxHeapify(A, i, n);
         }
     }
@@ -109,12 +111,12 @@ public class SortingAlgorithms {
         int l = leftChild(i);
         int r = rightChild(i);
         int largest;
-        if (l < n && A[l] > A[i]) {
+        if (l <= n && A[l] > A[i]) {
             largest = l;
         } else {
             largest = i;
         }
-        if (r < n && A[r] > A[largest]) {
+        if (r <= n && A[r] > A[largest]) {
             largest = r;
         }
         if (largest != i) {
@@ -139,9 +141,25 @@ public class SortingAlgorithms {
 
     /**
      * Quick sort
+     * Time complexity is O(n^2)
+     * Space complexity is O(1)
+     *
+     * Implementatie zie practicum 4
      */
     public static void quickSort(int[] A) {
-
+        // int[] to List<Integer>
+        List<Integer> myList = new ArrayList<Integer>();
+        for (int i : A) {
+            myList.add(i);
+        }
+        // sort from Practicum 4
+        Practicum4.QuickSort.MySorter mySorter = new MySorter();
+        mySorter.sort(myList);
+        // List<Integer> to int[]
+        int j = 0;
+        for (int i : myList) {
+            A[j++] = i;
+        }
     }
 
 }

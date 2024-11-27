@@ -3,7 +3,7 @@ package DynamicProgramming;
 import java.util.ArrayList;
 
 /**
- * Implementation for example given in chapter 15.
+ * Implementation for the first example given in chapter 15.
  * @author Flor De Meulemeester
  */
 public class RodCutting {
